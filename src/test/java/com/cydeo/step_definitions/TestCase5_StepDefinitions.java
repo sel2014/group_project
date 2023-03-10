@@ -25,6 +25,7 @@ public class TestCase5_StepDefinitions {
     public void i_click_on_the_signup_login_button() {
         automationPracticePage.signupLoginButton.click();
 
+
     }
 
     @Then("I should see the New User Signup! message")

@@ -123,21 +123,8 @@ public class AutomationPracticePage {
     @FindBy(xpath = "//*[@id=\"form\"]/div/div/div[3]/div/form/p")
  public WebElement emailAlreadyExistMessage;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//a[@href='/contact_us']")
+ public WebElement contactUsButton;
 
 
 }

@@ -1,0 +1,6 @@
+Feature: Verify that user can send message using contact us form and upload a file.
+
+Agile User Story: As a user, when I am on the home and when I  Click on 'Contact Us' button,
+I should see 'GET IN TOUCH' is message. When I Enter name, email, subject and message and upload
+file, click 'Ok' and Click 'submit' button, I should see 'Success! Your details have been submitted successfully.'
+message. When I click 'Home' button I should see  home page successfully.
