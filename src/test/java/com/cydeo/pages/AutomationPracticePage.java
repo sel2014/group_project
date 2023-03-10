@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import javax.security.auth.x500.X500Principal;
+
 public class AutomationPracticePage {
 
     public AutomationPracticePage(){
@@ -122,6 +124,34 @@ public class AutomationPracticePage {
 
     @FindBy(xpath = "//*[@id=\"form\"]/div/div/div[3]/div/form/p")
  public WebElement emailAlreadyExistMessage;
+
+    @FindBy(xpath ="//a[@href='/contact_us']" )
+ public WebElement contactUsButton;
+
+    @FindBy(xpath = "//h2[.='Get In Touch']")
+ public WebElement getInTouchText;
+
+    @FindBy (xpath = "//input[@placeholder='Name']")
+ public WebElement getNameBox;
+
+    @FindBy(xpath = "//input[@placeholder='Email']")
+ public WebElement getEmailBox;
+
+    @FindBy(xpath = "//input[@placeholder='Subject']")
+ public WebElement getSubjectBox;
+
+    @FindBy(xpath = "//textarea[@placeholder='Your Message Here']")
+ public WebElement messageArea;
+
+    @FindBy(xpath = "//input[@type='file']")
+ public WebElement chooseFileBtn;
+
+    @FindBy(xpath = "//input[@type='submit']")
+ public WebElement submitButton;
+
+ @FindBy(xpath = "//div[@class='status alert alert-success']")
+ public WebElement successMessage;
+
 
 
 
