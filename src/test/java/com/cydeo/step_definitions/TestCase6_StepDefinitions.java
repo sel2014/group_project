@@ -2,52 +2,105 @@ package com.cydeo.step_definitions;
 
 import com.cydeo.pages.AutomationGetInTouchPage;
 import com.cydeo.pages.AutomationPracticePage;
+import com.cydeo.pages.AutomationPracticePage2;
+import com.cydeo.utilities.BrowserUtils;
+import com.cydeo.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.interactions.Actions;
 
 public class TestCase6_StepDefinitions {
 
     AutomationGetInTouchPage automationGetInTouchPage = new AutomationGetInTouchPage();
     AutomationPracticePage automationPracticePage = new AutomationPracticePage();
 
-    @When("I click Contact Us button")
-    public void i_click_contact_us_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+
+    @When("I click on the Contact Us button")
+    public void iClickOnTheContactUsButton() {
+
+        automationPracticePage.contactUsButton.click();
+
+
     }
 
-    @Then("I should see GET IN TOUCH message")
-    public void i_should_see_get_in_touch_message() {
+    @Then("I should see  GET IN TOUCH header is visible")
+    public void iShouldSeeGETINTOUCHHeaderIsVisible() {
+
+        Assert.assertTrue(automationGetInTouchPage.getInTouchHeader.isDisplayed());
 
     }
 
-    @When("I enter name, email, subject and message")
-    public void i_enter_name_email_subject_and_message() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @When("I enter my name, email, subject, and message")
+    public void iEnterMyNameEmailSubjectAndMessage() {
+
+        automationPracticePage.nameBox.sendKeys("Name");
+        automationGetInTouchPage.getInTouchEmailBox.sendKeys("my11@email.com");
+        automationGetInTouchPage.subjectBox.sendKeys("Subject");
+        automationGetInTouchPage.messageBox.sendKeys("Have hopes, be happy!");
+        BrowserUtils.sleep(2);
+
     }
 
-    @When("when I upload file")
-    public void when_i_upload_file() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @And("I upload a file")
+    public void iUploadAFile() {
+
+        String filePath = "C:\\Users\\sel20\\OneDrive\\Desktop\\file.txt.txt";
+        automationGetInTouchPage.chooseFile.sendKeys(filePath);
+        BrowserUtils.sleep(2);
+
     }
 
-    @When("when I click Ok and click submit button")
-    public void when_i_click_ok_and_click_submit_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @And("I click the Submit button")
+    public void iClickTheSubmitButton() {
+
+        automationGetInTouchPage.submitButton.click();
+        BrowserUtils.sleep(2);
+
     }
 
-    @Then("The I should see Success! Your details have been submitted successfully. message")
-    public void the_i_should_see_success_your_details_have_been_submitted_successfully_message() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+
+    @And("I click the OK button")
+    public void iClickTheOKButton() {
+
+       Alert alert = Driver.getDriver().switchTo().alert();
+       alert.accept();
+        BrowserUtils.sleep(2);
+
+
     }
 
-    @When("I click Home button I should see  home page successfully.")
-    public void i_click_home_button_i_should_see_home_page_successfully() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Then("I should see the  message Success! Your details have been submitted successfully is visible")
+    public void iShouldSeeTheMessageSuccessYourDetailsHaveBeenSubmittedSuccessfullyIsVisible() {
+        Assert.assertTrue(automationGetInTouchPage.successMessage.isDisplayed());
+
+
+    }
+
+    @When("I click the Home button")
+    public void iClickTheHomeButton() {
+
+        automationGetInTouchPage.homeButton.click();
+        BrowserUtils.sleep(2);
+
+        Actions actions = new Actions(Driver.getDriver());
+        actions.click();
+
+
+    }
+
+
+
+
+    @Then("I am navigated back to home page")
+    public void iAmNavigatedBackToHomePage() {
+        automationPracticePage.pageTitle.isDisplayed();
+
+        Actions actions = new Actions(Driver.getDriver());
+        actions.click();
     }
 }
