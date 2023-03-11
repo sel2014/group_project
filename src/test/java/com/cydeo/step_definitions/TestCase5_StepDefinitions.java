@@ -1,9 +1,11 @@
 package com.cydeo.step_definitions;
 
 
+import com.cydeo.pages.AutomationGetInTouchPage;
 import com.cydeo.pages.AutomationPracticePage;
 import com.cydeo.pages.AutomationPracticePage2;
 import com.cydeo.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -13,6 +15,7 @@ public class TestCase5_StepDefinitions {
 
     AutomationPracticePage automationPracticePage = new AutomationPracticePage();
     AutomationPracticePage2 automationPracticePage2 = new AutomationPracticePage2();
+    AutomationGetInTouchPage automationGetInTouchPage = new AutomationGetInTouchPage();
 
     @Given("I am on the homepage of the Automation Exercise website")
     public void i_am_on_the_homepage_of_the_automation_exercise_website() {
@@ -24,6 +27,7 @@ public class TestCase5_StepDefinitions {
     @When("I click on the Signup  Login button")
     public void i_click_on_the_signup_login_button() {
         automationPracticePage.signupLoginButton.click();
+
 
 
     }
@@ -54,4 +58,7 @@ public class TestCase5_StepDefinitions {
         Assert.assertTrue(automationPracticePage.emailAlreadyExistMessage.isDisplayed());
 
     }
+
+
+
 }

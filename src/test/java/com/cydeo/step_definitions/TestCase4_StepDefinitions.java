@@ -4,6 +4,7 @@ package com.cydeo.step_definitions;
 import com.cydeo.pages.AutomationPracticePage;
 import com.cydeo.pages.AutomationPracticePage2;
 import com.cydeo.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -68,6 +69,7 @@ public class TestCase4_StepDefinitions {
         Assert.assertTrue(automationPracticePage.loginToYourAccountText.isDisplayed());
 
     }
+
 
 
 }
