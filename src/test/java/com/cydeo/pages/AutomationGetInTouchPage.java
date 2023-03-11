@@ -13,32 +13,31 @@ public class AutomationGetInTouchPage  {
     }
 
     @FindBy(xpath = "(//h2)[2]")
-    WebElement getInTouchHeader;
+   public WebElement getInTouchHeader;
 
     @FindBy (xpath = "(//input[@type='email'])[1]")
-    WebElement getInTouchEmailBox;
+   public WebElement getInTouchEmailBox;
 
     @FindBy(xpath = "//input[@name='subject']")
-    WebElement subjectBox;
+   public WebElement subjectBox;
 
     @FindBy(xpath = "//textarea[@id='message']")
-    WebElement messageBox;
+   public WebElement messageBox;
 
     @FindBy(xpath = "//input[@name='upload_file']")
-    WebElement chooseFile;
-    //String filePath = "\"C:\\Users\\sel20\\OneDrive\\Desktop\\Screenshot_20230111_135327.png\"";
-    //chooseFile.sendKeys(filePath)
+   public WebElement chooseFile;
+
 
     //------------ below locators may be in a different page---------
 
     @FindBy(xpath = "//input[@type='submit']")
-    WebElement submitButton;
+   public WebElement submitButton;
 
     @FindBy(xpath = "//div[@class='status alert alert-success']")
-    WebElement successMessage;
+   public WebElement successMessage;
 
     @FindBy(xpath = "//i[@class='fa fa-angle-double-left']")
-    WebElement homeButton;
+   public WebElement homeButton;
 
 
 
