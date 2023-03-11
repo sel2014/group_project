@@ -1,5 +1,6 @@
 package com.cydeo.pages;
 
+import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class AutomationPracticePage {
 
-    public AutomationPracticePage(){
+    public AutomationPracticePage() {
 
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -16,11 +17,11 @@ public class AutomationPracticePage {
     @FindBy(tagName = "h1")
     public WebElement pageTitle;
 
- @FindBy(xpath = "(//h2)[1]")
- public WebElement loginPageTitle;
+    @FindBy(xpath = "(//h2)[1]")
+    public WebElement loginPageTitle;
 
-   @FindBy(xpath = "/html/body/header/div/div/div/div[2]/div/ul/li[4]/a")
-   public WebElement signupLoginButton;
+    @FindBy(xpath = "/html/body/header/div/div/div/div[2]/div/ul/li[4]/a")
+    public WebElement signupLoginButton;
 
     @FindBy(xpath = "//h2[.=\"Login to your account\"]")
     public WebElement loginToYourAccountText;
@@ -121,23 +122,18 @@ public class AutomationPracticePage {
     public WebElement logoutButton;
 
     @FindBy(xpath = "//*[@id=\"form\"]/div/div/div[3]/div/form/p")
- public WebElement emailAlreadyExistMessage;
+    public WebElement emailAlreadyExistMessage;
+
+    @FindBy(xpath = "//a[@href='/contact_us']")
+    public WebElement contactUsButton;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // How to create a login method using configurationReader
+//    public void login(){
+//        newUserSignup.sendKeys(ConfigurationReader.getProperty("username"));
+//        password.sendKeys(ConfigurationReader.getProperty("username"));
+//        signupButton.sendKeys();
+//    }
 
 
 }
